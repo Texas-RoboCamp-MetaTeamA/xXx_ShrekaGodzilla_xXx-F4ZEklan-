@@ -28,4 +28,6 @@ void loop() {
   {
     one.lcd1("Right Sensor Activated");
   }
+  else
+    one.lcd1("No sensors activated");
 }
