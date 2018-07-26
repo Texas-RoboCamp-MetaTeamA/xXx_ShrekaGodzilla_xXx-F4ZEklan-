@@ -5,27 +5,27 @@ BnrOneA one;
 
 #define SSPIN 2
 
+int line;
+int counter;
+int i;
+
 void setup() {
   // put your setup code here, to run once:
+
   Serial.begin(57600);
   one.spiConnect(SSPIN);
   one.stop();
+
+  i = 0;
 }
 
 void loop() {
-  
-  if(one.obstacleSensors()==0)
-    one.move(100,100);
-  else
+  // put your main code here, to run repeatedly:
+
+  for(i = 0; i < 8; i++)
   {
-    one.brake(100,100);
-    one.move(-100,-100);
-    delay(100);
-    one.brake(100,100);
-    delay(500);
-    one.move(100,-100);
-    delay(25);
-    one.brake(100,100);
+    Serial.print(one.readAdc1());
+    delay(1000);
   }
-  
+  Serial.println();
 }

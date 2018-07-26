@@ -5,6 +5,7 @@ BnrOneA one;
 
 #define SSPIN 2
 
+
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(57600);
@@ -13,19 +14,11 @@ void setup() {
 }
 
 void loop() {
-  
-  if(one.obstacleSensors()==0)
-    one.move(100,100);
-  else
+  for(int i = 0;i<8;i++)
   {
-    one.brake(100,100);
-    one.move(-100,-100);
-    delay(100);
-    one.brake(100,100);
-    delay(500);
-    one.move(100,-100);
-    delay(25);
-    one.brake(100,100);
+    Serial.print(one.readAdc(i));
   }
+  Serial.println();
   
 }
+
