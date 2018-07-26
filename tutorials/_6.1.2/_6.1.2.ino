@@ -12,9 +12,8 @@ void setup() {
 
 void printAsterisks() {
   char lineUI[17];
-  for(int i = 0; i < 7; i++) {
+  for(int i = 0; i < 16; i++) {
     lineUI[i] = '*';
-    lineUI[i+1]=lineUI[i];;
   }
   lineUI[16] = 0;
   one.lcd1(lineUI);
