@@ -20,9 +20,9 @@ void loop() {
   {
     one.brake(100,100);
     one.move(-100,-100);
-    delay(100);
+    delay(150);
     one.brake(100,100);
-    delay(500);
+    delay(1000);
     one.move(100,-100);
     delay(25);
     one.brake(100,100);
