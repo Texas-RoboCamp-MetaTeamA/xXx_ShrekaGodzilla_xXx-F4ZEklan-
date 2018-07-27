@@ -58,7 +58,9 @@ int printAsterisks() {
   lineUI[16] = 0;
   one.lcd1(lineUI);
   one.lcd2(thresh);
-  return place;
+  if(place>3.5)
+    return 1;
+  return -1;
 }
 
 int lineRead() {
@@ -82,41 +84,19 @@ int lineRead() {
       max = adc[i]-50;
     }
   }
-/*  if(one.readButton() == 2)
-  {
-    thresh -= 10;
-  }
-  if(one.readButton() == 1)
-  {
-    thresh += 10;
-  }
-*/
+  
   thresh = max;
   return printAsterisks();
 }
 
 void moveTowardsCenter(int avg)
 {
-    //if the line is to the right
-    if(avg>3.5)
-    {
-      one.move(1,0);
-      delay(1000);
-      one.move(1,1);
-    }
-    
-    else if(avg<3.5)
-    {
-      one.move(0,1);
-      delay(1000);
-      one.move(1,1);
-    }
-    
+    if(avg>0)
+    if(avg<0)
     else
     {
-      one.move(1,1);
+      
     }
-
   
 }
 
