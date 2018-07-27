@@ -3,14 +3,13 @@
 #include <SPI.h>
 BnrOneA one;
 
-#define SSPIN 2
-
 int thresh;
 int adc[8];
 int i;
 
 char lineUI[16];
 
+#define SSPIN 2
 void setup() {
   // put your setup code here, to run once:
 
@@ -20,7 +19,6 @@ void setup() {
 
   thresh = 350;
 }
-
 void loop() {
   int big = 0;
   // put your main code here, to run repeatedly:
@@ -85,5 +83,5 @@ void printAsterisks() {
     direction = "Centered";
   lineUI[16] = 0;
   one.lcd1(lineUI);
-  one.lcd2(thresh);
+  one.lcd2(direction);
 }
