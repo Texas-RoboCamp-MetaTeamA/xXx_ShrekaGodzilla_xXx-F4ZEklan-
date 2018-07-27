@@ -237,6 +237,7 @@ void loop() {
 void PlayTone(int frequency, int duration) {
   if(frequency != 0)
     tone(9, frequency, duration);
+    one.move(50,-50);
     
   delay(duration);
 }
